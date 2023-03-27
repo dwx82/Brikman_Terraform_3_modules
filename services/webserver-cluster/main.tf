@@ -49,8 +49,6 @@ resource "aws_launch_configuration" "example" {
 }
 
 resource "aws_autoscaling_group" "example" {
-  # Explicitly depend on the launch configuration's name so each time it's
-  # replaced, this ASG is also replaced
   name = var.cluster_name
 
   launch_configuration = aws_launch_configuration.example.name
