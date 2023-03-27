@@ -31,6 +31,11 @@ variable "enable_autoscaling" {
   description = "If set to true, enable auto scaling"
   type        = bool
 }
+variable "custom_tags" {
+  description = "Custom tags to set on the Instances in the ASG"
+  type        = map(string)
+  default     = { Owner = test }
+}
 variable "ami" {
   description = "The AMI to run in the cluster"
   type        = string
